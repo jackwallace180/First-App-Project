@@ -1,0 +1,26 @@
+extends layout
+
+block content
+ -data = data || {}
+ if errors
+    ul
+      for error in errors
+        li= error.msg
+ form(action="." method="POST")
+  label(for="name") Name:
+  input(
+    type="text"
+    id="name"
+    name="name"
+    value=data.name
+  )
+
+  label(for="location") Location:
+  input(
+    type="location"
+    id="location"
+    name="location"
+    value=data.location
+  )
+
+  input(type="submit" value="Submit")
